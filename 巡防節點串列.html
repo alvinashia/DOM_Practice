@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+        <li id="one" class="hot"><em>fresh</em>
+            <Fieldset>Figs</Fieldset>
+        </li>
+        <li id="two" class="hot">pine nuts</li>
+        <li id="three" class="hot">honey</li>
+        <li id="four">balsamic vinegar</li>
+    </ul>
+
+    <script>
+        let hotItems = document.querySelectorAll('li.hot');
+        //將節點串列儲存於陣列中
+        if (hotItems.length > 0) { //若陣列中包含節點項目
+            for (let i = 0; i < hotItems.length; i++) { //巡防每一個節點
+                hotItems[i].className = 'cool' //變更class的屬性值，所以只要符合li.hot就會 被改變 class屬性
+
+            }
+        }
+    </script>
+</body>
+
+</html>

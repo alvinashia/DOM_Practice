@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./c06.css" />
+</head>
+
+<body>
+    <div id="page">
+        <h1>List King</h1>
+        <form methon="post" action="'http://www.example.org/register" id="formSignup">
+            <h2>membership</h2>
+            <label for="package" class="selectbox">select a package:</label>
+            <!-- 用for去做跟select id 的package做鏈接 -->
+            <select name="" id="package">
+                <option value="annual">1 year ($50)</option>
+                <option value="monthly">1 month ($5)</option>
+            </select>
+            <div id="packageHint" class="tip"></div>
+            <!-- 這邊先預留一個空間，等到到時候就能直接顯示 -->
+            <input type="checkbox" id="terms" />
+            <label for="terms" class="checkbox">Check to agree to term &amp; conditions</label>
+            <div id='termsHint' class="warning"></div>
+            <!-- 這邊先預留一個空間，等到到時候就能直接顯示 -->
+            <input type="submit" value="next" />
+
+        </form>
+    </div>
+    <script>
+        let elForm = document.querySelector('#formSignup')
+        // 後面有加個監聽器，當使用者submit的時候，就會進行 checkTerms的函式
+        let elSelectPackage = document.querySelector('#package')
+        let elPackageHint = document.querySelector('#packageHint');
+        // 這邊是設定預留空間html變更的變數，當發生change的時候就執行函式
+        let elTerms = document.querySelector('#terms');
+        let elTermsHint = document.querySelector('#termsHint');
+
+
+        // 確認選擇方案
+        function packageHint() {
+            let pack = this.options[this.selectedIndex].value;
+            if (pack === 'monthly') {
+                elPackageHint.innerHTML = 'Save $10 if you pay for 1 year!';
+            } else {
+                elPackageHint.innerHTML = 'Wise choice!';
+            }
+        }
+
+
+        // 確認是否有閱讀相關事項（框框打勾）
+        function checkTerms(event) {
+            if (!elTerms.checked) {
+                elTermsHint.innerHTML = 'you must agree to the terms.';
+                event.preventDefault();
+                // 要是沒有點選打勾，就是表單傳送失敗
+            }
+        }
+        elForm.addEventListener('submit', checkTerms, false);
+        elSelectPackage.addEventListener('change', packageHint, false);
+
+    </script>
+</body>
+
+</html>

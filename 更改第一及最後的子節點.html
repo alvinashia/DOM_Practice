@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+        <li id="one" class="hot"><em>fresh</em>
+            <Fieldset>Figs</Fieldset>
+        </li>
+        <li id="two" class="hot">pine nuts</li>
+        <li id="three" class="hot">honey</li>
+        <li id="four">balsamic vinegar</li>
+    </ul>
+
+    <script>
+        let starItem = document.getElementsByTagName('ul')[0];
+        //選取一個起始節點，并尋找他的子節點，這邊要找的是li,所以起始節點要去上一層ul設定
+        let firstItem = starItem.firstChild;  //設定第一個子節點的變數
+        let lastItem = starItem.lastChild;  //設定最後一個子節點的變數
+
+        //變更子節點的class屬性值
+        firstItem.setAttribute('class', 'complete');
+        lastItem.setAttribute('class', 'cool')
+
+    </script>
+</body>
+
+</html>

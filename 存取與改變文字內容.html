@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page">
+        <h1 id="header">List</h1>
+        <h2>Buy groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em> figs</li>
+            <li id="two" class="hot">pine nuts</li>
+            <li id="three" class="hot">honey</li>
+            <li id="four">balsamic vinegar</li>
+        </ul>
+        <div id="scriptResults"></div>
+    </div>
+    <script src="js/inner-text-and-text-content.js"></script>
+
+    <script>
+        let firstItem = document.getElementById('one');//截取第一個清單項目
+        let showTextContent = firstItem.textContent; //截取textContent內容值
+        let showInnerText = firstItem.innerText; //截取innerText內容值
+
+        let msg = '<p>textContent:' + showTextContent + '</p>';
+        msg += '<p>innerText:' + showInnerText + '</p>';
+        let el = document.getElementById('scriptResults');
+        el.innerHTML = msg;
+
+        firstItem.textContent = 'sourdough bread'; //變更第一個清單項目內容
+
+    </script>
+</body>
+
+</html>

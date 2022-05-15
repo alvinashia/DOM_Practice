@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Person {
+        //     constructor(data) {
+        //         this.name = data.name;
+        //         this.age = data.age;
+        //     }
+        // }
+
+        // let Aaron = new Person({ name: 'Aaron', age: 28 })
+        // let Jackson = new Person({ name: 'Jackson', age: 30 })
+        // console.log(Aaron);
+
+        console.log(new Date);
+        setTimeout(function () {
+            console.log(new Date());
+        }, 3000);
+
+//
+        function traceTime() {
+            console.log(count, new Date());
+            if (--count <= 0)
+                clearInterval(iid);
+        }
+
+        var iid = setInterval(traceTime, 1000);
+        var count = 6;
+
+    </script>
+</body>
+
+</html>

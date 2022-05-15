@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="header">List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+        <li id="one" class="hot"><em>fresh</em>
+            <Fieldset>Figs</Fieldset>
+        </li>
+        <li id="two" class="hot">pine nuts</li>
+        <li id="three" class="hot">honey</li>
+        <li id="four">balsamic vinegar</li>
+    </ul>
+
+    <script>
+        let el = document.getElementById('one')
+        //取得元件並存儲於變數中
+        el.className = 'cool'
+        //變更指定的元件的class屬性，所以只有class的id 有變成cool，其他的保持原樣
+    </script>
+</body>
+
+</html>

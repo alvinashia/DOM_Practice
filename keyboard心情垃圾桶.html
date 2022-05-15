@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            /* margin: 0;
+            padding: 0;
+            width: 100%; */
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+            list-style: none;
+        }
+
+        .sectionall {
+            width: 100%;
+            height: 1000px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(157, 194, 255);
+            margin: 0 auto;
+        }
+
+        textarea {
+            height: 500px;
+            width: 400px;
+            border: 1px solid #fff;
+            background-color: #fff;
+            outline: none;
+        }
+
+        .title h1 {
+            padding-left: -50px;
+            color: white;
+            text-shadow: 0.1em 0.1em 0.2em black
+        }
+
+        .cat {
+            text-align: center;
+        }
+
+        .title img {
+            width: 150px;
+            height: 150px;
+
+        }
+
+        .title h3 {
+            padding-left: -50px;
+            color: rgb(90, 80, 80);
+            padding-left: 30px;
+        }
+
+        #charactersLeft {
+            text-align: right;
+        }
+
+        .btn {
+            text-align: right;
+        }
+
+        .button {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            padding: 5px 20px;
+            border: 0px solid #ffffff;
+            border-radius: 23px;
+            background: #d6a9c9;
+            background: -webkit-gradient(linear, left top, left bottom, from(#d6a9c9), to(#9d7ade));
+            background: -moz-linear-gradient(top, #d6a9c9, #9d7ade);
+            background: linear-gradient(to bottom, #d6a9c9, #9d7ade);
+            text-shadow: #564401 1px 1px 1px;
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #ffcbf1;
+            background: -webkit-gradient(linear, left top, left bottom, from(#ffcbf1), to(#bc92ff));
+            background: -moz-linear-gradient(top, #ffcbf1, #bc92ff);
+            background: linear-gradient(to bottom, #ffcbf1, #bc92ff);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .button:active {
+            background: #806579;
+            background: -webkit-gradient(linear, left top, left bottom, from(#806579), to(#9d7ade));
+            background: -moz-linear-gradient(top, #806579, #9d7ade);
+            background: linear-gradient(to bottom, #806579, #9d7ade);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sectionall">
+        <div class="title">
+            <h1>這是一隻想聽故事的貓貓</h1>
+            <div class="cat">
+                <img src="./cat.gif" alt="">
+            </div>
+            <h3>有什麼事都可以跟我說噢ヾ(ｏ･ω･)ﾉ</h3>
+        </div>
+        <div id='page'>
+            <!-- 姓名：<input type="text" name="姓名"> -->
+            <form id="messageForm">
+
+                <textarea id="message"></textarea>
+                <div id="charactersLeft">貓貓一天只想聽1000字</div>
+                <!-- <div id="lastKey"></div> -->
+                <br>
+                <div class="btn">
+                    <button onclick="cleanstring()" class="button">清空</button>
+                    <input onclick="myFunction()" class="button" type="submit" value="送出">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        let el;
+        function charCount(e) {
+            let textEntered, charDisplay, counter;
+            textEntered = document.querySelector("#message").value;
+            charDisplay = document.querySelector('#charactersLeft');
+
+            counter = (1000 - (textEntered.length));
+            charDisplay.textContent = '你還可以說 ' + counter + ' 個字';
+
+            // lastkey = document.querySelector('#lastkey')
+            // lastkey.textContent = 'Last key in ASCII code:' + e.keyCode;
+        }
+        el = document.querySelector('#message');
+        el.addEventListener('keyup', charCount, false)
+
+        function myFunction() {
+            alert('一天的憂慮一天擔，今天也辛苦了：）')
+        }
+
+        // let input = document.querySelector('input');
+        // window.addEventListener('load', function () {
+        //     input.value = '';
+        // })
+
+        let textarea = document.querySelector('textarea');
+        window.addEventListener('load', function () {
+            textarea.value = '';
+        })
+
+        // let sendmsg = document.querySelector('#sendmsg')
+        // sendmsg.addEventListener('click', myFunction)
+
+    </script>
+</body>
+
+</html>
